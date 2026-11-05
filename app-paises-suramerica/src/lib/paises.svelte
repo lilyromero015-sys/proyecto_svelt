@@ -1,6 +1,9 @@
 <script>
     // @ts-nocheck
-
+    const banderas = import.meta.glob("../assets/*.webp", {
+        eager: true,
+        import: "default",
+    });
     export let pais;
     let p;
     /*[0]=Nombre_pais[1]=capita [2]=poblacion [3]=moneda [4]area [5]=bandera*/
@@ -60,7 +63,7 @@
 <div class="main">
     <div class="col1">
         <img
-            src="./src/assets/{p[5]}"
+            src={banderas["../assets/" + p[5]]}
             alt="bandera_colombia"
             width="300"
             height="200"
